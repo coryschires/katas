@@ -1,18 +1,19 @@
 require 'hangman'
 
 describe Hangman do
-  
-  context "when being initialized" do
-    before { @hangman = Hangman.new('mongoose') }
-    it "should set the solution when the game is started" do
-      @hangman.solution.should be
-    end
-    it "should have no guesses" do
-      @hangman.guesses.length.should == 0
-    end
-  end
-  
+
   context "public methods" do
+    describe "#new" do
+      before { @hangman = Hangman.new('mongoose') }
+
+      it "should set the solution when the game is started" do
+        @hangman.solution.should be
+      end
+      it "should have no guesses" do
+        @hangman.guesses.length.should == 0
+      end
+    end
+
     describe "#unencrypted_solution" do
       it "should display the solution without any encryption" do
         @hangman = Hangman.new('mongoose')
@@ -68,7 +69,7 @@ describe Hangman do
       end
     end
   end
-  
+
   context "private methods" do
     describe "initialize_solution" do
       it "should mark all letters as unknown" do
@@ -85,5 +86,5 @@ describe Hangman do
       end
     end
   end
-  
+
 end
