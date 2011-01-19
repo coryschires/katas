@@ -1,6 +1,7 @@
 require '../lib/hangman.rb'
 require '../lib/graphics.rb'
 
+system 'clear'
 puts %q{
       __  __
      / / / /___ _____  ____ _____ ___  ____ _____
